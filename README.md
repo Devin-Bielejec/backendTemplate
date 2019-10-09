@@ -32,4 +32,16 @@ knexfile.js
 
 6) Knex wise
 a) npx knex migrate:make users-table
-b) npx knex seed:make 001-users 
+b) npx knex seed:make 001-users
+
+7) Database
+
+Migration: users-table
+a) incrementing id 
+b) username unique notNull
+c) password notNull
+d) name [optional]
+e) age integer [optional]
+f) subscription bool [optional] - default to false
+
+npx knex migrate:latest
