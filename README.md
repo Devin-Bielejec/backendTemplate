@@ -45,3 +45,7 @@ e) age integer [optional]
 f) subscription bool [optional] - default to false
 
 npx knex migrate:latest
+
+Seed: users
+{id: 1, username: "Devin", password: "Devin", age: 14, subscription: false, name: "Devin"}
+npx knex seed:run
