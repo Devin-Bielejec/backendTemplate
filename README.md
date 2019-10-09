@@ -49,3 +49,16 @@ npx knex migrate:latest
 Seed: users
 {id: 1, username: "Devin", password: "Devin", age: 14, subscription: false, name: "Devin"}
 npx knex seed:run
+
+8) Users
+a) Users
+b) Users Model
+    i) require database from dbConfig
+    ii) database helper functions
+c) Users Router
+
+9) dbConfig
+a) knex
+b) config -> knexfile
+c) environment
+d) export config
