@@ -26,3 +26,10 @@ n) Export Server
 package.json - scripts
 a) "start":"node index.js"
 b) "server":"nodemon index.js"
+
+knexfile.js
+-copy and paste stuff
+
+6) Knex wise
+a) npx knex migrate:make users-table
+b) npx knex seed:make 001-users 
