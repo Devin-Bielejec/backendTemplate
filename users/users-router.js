@@ -1,22 +1,20 @@
-const router = express("express").router();
+const router = require("express").Router();
 const Users = require("./users-model.js");
 const bcrypt = require("bcryptjs");
 
 router.post("/register", (req, res) => {
     const creds = req.body;
-
+    console.log(creds);
     const salt = bcrypt.genSaltSync(10);
-    console.log(salt);
     const hash = bcrypt.hashSync(creds.password, salt);
-    console.log(hash);
     
     Users.insert({ ...creds, password: hash })
-    .then(res => {
-        console.log(res);
+    .then(user => {
+        console.log(user);
         res.status(201).json({message: "User created!"});
     })
     .catch(err => {
-        res.status(500).json({message: ""})
+        res.status(500).json({message: "", error: err})
     })
 
 })
@@ -39,3 +37,5 @@ router.post("/login", (req, res) => {
         res.status(500).json({message: "Database error", error: err})
     })
 })
+
+module.exports = router;
