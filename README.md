@@ -63,10 +63,15 @@ npx knex seed:run
     1. require database from dbConfig
     2. database helper functions
 3. Users Router
+
+    
+#### Auth
+1. Auth Router
     1. router = express("express").router()
     2. import bcrypt
     3. import Users from users-model
-    
+    4. Login post
+    5. Register post with JSONWEBTOKEN
 
 #### JSONWEBTOKEN
 1. Import
