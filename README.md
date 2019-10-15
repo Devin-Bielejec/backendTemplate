@@ -1,69 +1,68 @@
 # backendTemplate
 Creating the template for a backend
 
-1) npm init -y
+### npm init -y
 
-2) Installation: npm i knex sqlite3 express dotenv bcryptjs
-3) npm i -D nodemon
+### Installation: npm i knex sqlite3 express dotenv bcryptjs
+## npm i -D nodemon
 
-4) npx knex init (Knex was not install globally [npm i -g knex ==> knex init])
+### npx knex init (Knex was not install globally [npm i -g knex ==> knex init])
 
-5) File Structure:
+### File Structure:
 
-index.js - 
-a) port information with env variable
-b) require dotenv config
-c) server listen
+#### index.js - 
+1. port information with env variable
+2. require dotenv config
+3. server listen
 
-.env - NODE_ENV=development PORT=5000
+#### .env - NODE_ENV=development PORT=5000
 
-server.js - 
-1) Express
-2) Server
-3) API Requests
+#### server.js - 
+1. Express
+2. Server
+3. API Requests
+4. Export Server
 
-n) Export Server
+#### package.json - scripts
+1. "start":"node index.js"
+2. "server":"nodemon index.js"
 
-package.json - scripts
-a) "start":"node index.js"
-b) "server":"nodemon index.js"
+#### knexfile.js
+1. copy and paste stuff
 
-knexfile.js
--copy and paste stuff
+#### Knex wise
+1. npx knex migrate:make users-table
+2. npx knex seed:make 001-users
 
-6) Knex wise
-a) npx knex migrate:make users-table
-b) npx knex seed:make 001-users
+#### Database
 
-7) Database
+#### Migration: users-table
+1. incrementing id 
+2. username unique notNull
+3. password notNull
+4. name [optional]
+5. age integer [optional]
+6. subscription bool [optional] - default to false
 
-Migration: users-table
-a) incrementing id 
-b) username unique notNull
-c) password notNull
-d) name [optional]
-e) age integer [optional]
-f) subscription bool [optional] - default to false
+#### npx knex migrate:latest
 
-npx knex migrate:latest
-
-Seed: users
-{id: 1, username: "Devin", password: "Devin", age: 14, subscription: false, name: "Devin"}
+#### Seed: users
+1. {id: 1, username: "Devin", password: "Devin", age: 14, subscription: false, name: "Devin"}
 npx knex seed:run
 
-8) Users
-a) Users
-b) Users Model
-    i) require database from dbConfig
-    ii) database helper functions
-c) Users Router
-    i) router = express("express").router()
-    ii) import bcrypt
-    iii) import Users from users-model
+#### Users
+1. Users
+2. Users Model
+    1. require database from dbConfig
+    2. database helper functions
+3. Users Router
+    1. router = express("express").router()
+    2. import bcrypt
+    3. import Users from users-model
     
 
-9) dbConfig
-a) knex
-b) config -> knexfile
-c) environment
-d) export config
+#### dbConfig
+1. knex
+2. config -> knexfile
+3. environment
+4. export config
