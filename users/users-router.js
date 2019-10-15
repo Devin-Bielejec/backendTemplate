@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Users = require("./users-model.js");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const secrets = require('../config/secrets.js');
 
 router.post("/register", (req, res) => {
     const creds = req.body;
@@ -27,7 +29,10 @@ router.post("/login", (req, res) => {
         console.log(user);
         //Check if passwords are the same
         if (user && bcrypt.compareSync(creds.password, user.password)) {
-            res.status(202).json({message: "Correct Credentials!"})
+            const token = generateToken(user);
+            res.status(202).json({
+                message: "Correct Credentials!",
+                token})
         } else {
             res.status(401).json({message: "Incorrect Credentials!"})
             //Security Help: User will get incorrect credentials for wrong password or wrong username; user will not know which one.
@@ -37,5 +42,20 @@ router.post("/login", (req, res) => {
         res.status(500).json({message: "Database error", error: err})
     })
 })
+
+function generateToken(user) {
+    const payload = {
+      subject: user.id, // sub in payload is what the token is about
+      username: user.username,
+      // ...otherData
+    };
+  
+    const options = {
+      expiresIn: '1d', // show other available options in the library's documentation
+    };
+  
+    // extract the secret away so it can be required and used where needed
+    return jwt.sign(payload, secrets.jwtSecret, options); // this method is synchronous
+  }
 
 module.exports = router;

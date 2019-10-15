@@ -3,8 +3,9 @@ Creating the template for a backend
 
 ### npm init -y
 
-### Installation: npm i knex sqlite3 express dotenv bcryptjs
-## npm i -D nodemon
+### Installation
+1. npm i knex sqlite3 express dotenv bcryptjs jsonwebtoken
+2. npm i -D nodemon
 
 ### npx knex init (Knex was not install globally [npm i -g knex ==> knex init])
 
@@ -34,6 +35,12 @@ Creating the template for a backend
 1. npx knex migrate:make users-table
 2. npx knex seed:make 001-users
 
+#### dbConfig
+1. knex
+2. config -> knexfile
+3. environment
+4. export config
+
 #### Database
 
 #### Migration: users-table
@@ -61,8 +68,8 @@ npx knex seed:run
     3. import Users from users-model
     
 
-#### dbConfig
-1. knex
-2. config -> knexfile
-3. environment
-4. export config
+#### JSONWEBTOKEN
+1. Import
+2. Generate Token Function
+3. ./config/secrets.js file
+    1. exported secret
