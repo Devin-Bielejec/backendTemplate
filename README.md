@@ -78,3 +78,16 @@ npx knex seed:run
 2. Generate Token Function
 3. ./config/secrets.js file
     1. exported secret
+
+
+#### General Backend Endpoints
+1. User Profile
+    1. get information
+    2. update information
+    3. add information
+
+2. User has an array of something
+    1. add item to something
+    2. delete item to something
+    3. get somethings
+    4. update somethings    
