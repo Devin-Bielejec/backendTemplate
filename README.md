@@ -84,7 +84,6 @@ npx knex seed:run
 1. User Profile
     1. get information
     2. update information
-    3. add information
 
 2. User has an array of something
     1. add item to something
