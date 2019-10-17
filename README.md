@@ -104,4 +104,4 @@ npx knex seed:run
 3. Depoly on Heroku
 1. Testsq
 2. Implement Cookies for extra security
-3. Documentation   
+3. Documentation   !
