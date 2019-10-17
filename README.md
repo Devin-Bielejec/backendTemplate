@@ -4,7 +4,7 @@ Creating the template for a backend
 ### npm init -y
 
 ### Installation
-1. npm i knex sqlite3 express dotenv bcryptjs jsonwebtoken
+1. npm i knex sqlite3 express dotenv bcryptjs jsonwebtoken pg
 2. npm i -D nodemon
 
 ### npx knex init (Knex was not install globally [npm i -g knex ==> knex init])
@@ -84,9 +84,21 @@ npx knex seed:run
 1. User Profile
     1. get information
     2. update information
+    3. Included restricted middleware
 
 2. User has an array of something
     1. add item to something
     2. delete item to something
     3. get somethings
-    4. update somethings    
+    4. update somethings 
+
+#### Deploying
+1. Change knexfile stuff (import and production object)
+2. Heroku
+3. Test endpoint in insomonia
+
+##### Notes
+0. Seed Data
+3. Depoly on Heroku
+1. Testsq
+2. Implement Cookies for extra security   
