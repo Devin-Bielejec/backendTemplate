@@ -101,9 +101,15 @@ npx knex seed:run
     4. npx heroku run knex seed:run -a <app-name>
 3. Test endpoint in insomonia
 
+
+#### Testing
+1. npx knex migrate:latest --env=testing
+2. npx knex seed:run --env=testing
+
+
 ##### Notes
 0. Seed Data
 3. Depoly on Heroku
-1. Testsq
+1. Tests
 2. Implement Cookies for extra security
 3. Documentation   !!!!!
