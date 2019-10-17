@@ -96,7 +96,9 @@ npx knex seed:run
 1. Change knexfile stuff (import and production object)
 2. Heroku
     1. Resources: heroku prostgres add on
-    2. Setting: DB_ENV ==> PRODUCTION
+    2. Setting: DB_ENV ==> production
+    3. npx heroku run knex migrate:latest -a <app-name>
+    4. npx heroku run knex seed:run -a <app-name>
 3. Test endpoint in insomonia
 
 ##### Notes
