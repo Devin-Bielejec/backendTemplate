@@ -5,7 +5,7 @@ Creating the template for a backend
 
 ### Installation
 1. npm i knex sqlite3 express dotenv bcryptjs jsonwebtoken pg
-2. npm i -D nodemon
+2. npm i -D nodemon supertest jest cross-env
 
 ### npx knex init (Knex was not install globally [npm i -g knex ==> knex init])
 
@@ -95,10 +95,13 @@ npx knex seed:run
 #### Deploying
 1. Change knexfile stuff (import and production object)
 2. Heroku
+    1. Resources: heroku prostgres add on
+    2. Setting: DB_ENV ==> PRODUCTION
 3. Test endpoint in insomonia
 
 ##### Notes
 0. Seed Data
 3. Depoly on Heroku
 1. Testsq
-2. Implement Cookies for extra security   
+2. Implement Cookies for extra security
+3. Documentation   
